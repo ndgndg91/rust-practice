@@ -133,7 +133,39 @@ fn main() {
     };
 
     println!("can access ? {:?}", can_access_file);
-    
+    let beverages = vec![Beverage::apple(), Beverage::remon()];
+    for b in &beverages {
+        b.print_self();
+    }
+
+    println!("beverage length : {:?}", beverages.len());
+
+    // after for loop beverages not available by ownership
+    for b in beverages {
+        println!("fluid oz : {:?}", b.fluid_oz);
+    }
+
+    print_string("a string slice");
+    let borrow_string = "borrow string";
+    print_string(borrow_string);
+    print_string(borrow_string);
+    let owned_string = "owned string".to_owned();
+    let another_owned = String::from("another");
+    print_string(&owned_string);
+    print_string(&another_owned);
+
+    let name = String::from("Name Dong Gil");
+    let employee = Employee{name: name};
+    println!("{:?}", &employee.name);
+    println!("{:?}", &employee.name);
+}
+
+fn print_string(text: &str) {
+    println!("{:?}", text);
+}
+
+struct Employee {
+    name: String,
 }
 
 
