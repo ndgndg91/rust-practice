@@ -9,6 +9,13 @@ enum Flavor {
     APPLE
 }
 
+enum Role {
+    MANAGER,
+    ADMIN,
+    USER,
+    GUEST
+}
+
 struct Beverage {
     flavor: Flavor,
     fluid_oz: f64
@@ -91,7 +98,18 @@ fn main() {
 
     let favorites = ("Game", "Dev", "rust", "java", "go", "spring", "js", "typescript");
     println!("{:?}, {:?}, {:?} {:?}", favorites.0, favorites.2, favorites.4, favorites.7);
+
+    let role = Role::GUEST;
+    // admin only allowed.
+    let can_access_file = match role {
+        Role::ADMIN => true,
+        _ => false
+    };
+
+    println!("can access ? {:?}", can_access_file);
+    
 }
+
 
 enum Direction {
     UP,
