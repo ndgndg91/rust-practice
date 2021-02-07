@@ -10,13 +10,16 @@ enum Role {
     GUEST
 }
 
-#[derive(Debug)]
+// Debug to use "{:?}" token
+// Clone, Copy not to use onwership, borrow, so always copy variable
+// Clone, Copy is so expensive. so carafully use Clone, Copy Struct that have 3 ~ 4 entries
+#[derive(Debug, Clone, Copy)]
 enum Flavor {
     ORANGE,
     REMON,
     APPLE
 }
-#[derive(Debug)]
+#[derive(Debug, Clone, Copy)]
 struct Beverage {
     flavor: Flavor,
     fluid_oz: f64
