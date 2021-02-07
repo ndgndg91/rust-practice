@@ -22,6 +22,12 @@ struct Beverage {
 }
 
 impl Beverage {
+    fn apple() -> Self {
+        Self {flavor: Flavor::APPLE, fluid_oz: 30.5}
+    }
+    fn remon() -> Self {
+        Self {flavor: Flavor::REMON, fluid_oz: 35.5}
+    }
     fn print_self(&self) {
         let description = match &self.flavor {
             Flavor::ORANGE => "ORANGE",
@@ -29,7 +35,7 @@ impl Beverage {
             Flavor::APPLE => "APPLE"
         };
         println!("{:?}, {:?}", description, self.fluid_oz)
-    }
+    } 
 }
 
 struct GroceryItem {
@@ -38,6 +44,11 @@ struct GroceryItem {
 }
 
 fn beverage() {
+    let apple_bever = Beverage::apple();
+    apple_bever.print_self();
+    print_flavor(&apple_bever.flavor);
+    let remon_bever = Beverage::remon();
+    remon_bever.print_self();
     let apple_beverage = Beverage{flavor: Flavor::APPLE, fluid_oz: 39.1};
     apple_beverage.print_self();
     let remon_beverage = Beverage{flavor: Flavor::REMON, fluid_oz: 31.9};
@@ -46,7 +57,7 @@ fn beverage() {
     orange_beverage.print_self();
 }
 
-fn print_flavor(f: Flavor) -> &'static str {
+fn print_flavor(f: &Flavor) -> &'static str {
     return match f {
         Flavor::APPLE => "apple",
         Flavor::REMON => "remon",
