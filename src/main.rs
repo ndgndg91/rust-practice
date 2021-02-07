@@ -3,6 +3,44 @@ extern crate ferris_says;
 use ferris_says::say;
 use std::io::{ stdout, BufWriter};
 
+enum Flavor {
+    ORANGE,
+    REMON,
+    APPLE
+}
+
+struct Beverage {
+    flavor: Flavor,
+    fluid_oz: f64
+}
+
+struct GroceryItem {
+    stock: i32,
+    price: f64,
+}
+
+fn beverage() {
+    let apple_beverage = Beverage{flavor: Flavor::APPLE, fluid_oz: 39.1};
+    println!("flaver : {:?}, oz : {:>}", print_flavor(apple_beverage.flavor), apple_beverage.fluid_oz);
+    let remon_beverage = Beverage{flavor: Flavor::REMON, fluid_oz: 31.9};
+    println!("flaver : {:?}, oz : {:>}", print_flavor(remon_beverage.flavor), remon_beverage.fluid_oz);
+    let orange_beverage = Beverage{flavor: Flavor::ORANGE, fluid_oz: 32.7};
+    println!("flaver : {:?}, oz : {:>}", print_flavor(orange_beverage.flavor), orange_beverage.fluid_oz);
+}
+
+fn print_flavor(f: Flavor) -> &'static str {
+    return match f {
+        Flavor::APPLE => "apple",
+        Flavor::REMON => "remon",
+        Flavor::ORANGE => "orange"
+    }
+}
+
+fn grocery_item(){
+    let item = GroceryItem{stock: 10, price: 9500.0};
+    println!("price : {:?}, stock : {:?}", item.price, item.stock);
+}
+
 // This is Entry point of the applicaiton. 
 // like public static void main(String[] args) {} in Java.
 fn main() {
@@ -38,6 +76,9 @@ fn main() {
     which_way(Direction::DOWN);
     which_way(Direction::LEFT);
     which_way(Direction::RIGHT);
+
+    grocery_item();
+    beverage();
 }
 
 enum Direction {
