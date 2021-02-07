@@ -3,12 +3,6 @@ extern crate ferris_says;
 use ferris_says::say;
 use std::io::{ stdout, BufWriter};
 
-enum Flavor {
-    ORANGE,
-    REMON,
-    APPLE
-}
-
 enum Role {
     MANAGER,
     ADMIN,
@@ -16,6 +10,13 @@ enum Role {
     GUEST
 }
 
+#[derive(Debug)]
+enum Flavor {
+    ORANGE,
+    REMON,
+    APPLE
+}
+#[derive(Debug)]
 struct Beverage {
     flavor: Flavor,
     fluid_oz: f64
@@ -50,11 +51,15 @@ fn beverage() {
     let remon_bever = Beverage::remon();
     remon_bever.print_self();
     let apple_beverage = Beverage{flavor: Flavor::APPLE, fluid_oz: 39.1};
-    apple_beverage.print_self();
+    println!("{:?}", apple_beverage);
+    // apple_beverage.print_self();
     let remon_beverage = Beverage{flavor: Flavor::REMON, fluid_oz: 31.9};
-    remon_beverage.print_self();
+    println!("{:?}", remon_beverage);
+    // remon_beverage.print_self();
     let orange_beverage = Beverage{flavor: Flavor::ORANGE, fluid_oz: 32.7};
-    orange_beverage.print_self();
+    println!("{:?}", orange_beverage);
+    // orange_beverage.print_self();
+
 }
 
 fn print_flavor(f: &Flavor) -> &'static str {
