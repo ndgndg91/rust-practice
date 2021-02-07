@@ -21,6 +21,17 @@ struct Beverage {
     fluid_oz: f64
 }
 
+impl Beverage {
+    fn print_self(&self) {
+        let description = match &self.flavor {
+            Flavor::ORANGE => "ORANGE",
+            Flavor::REMON => "REMON",
+            Flavor::APPLE => "APPLE"
+        };
+        println!("{:?}, {:?}", description, self.fluid_oz)
+    }
+}
+
 struct GroceryItem {
     stock: i32,
     price: f64,
@@ -28,11 +39,11 @@ struct GroceryItem {
 
 fn beverage() {
     let apple_beverage = Beverage{flavor: Flavor::APPLE, fluid_oz: 39.1};
-    println!("flaver : {:?}, oz : {:>}", print_flavor(apple_beverage.flavor), apple_beverage.fluid_oz);
+    apple_beverage.print_self();
     let remon_beverage = Beverage{flavor: Flavor::REMON, fluid_oz: 31.9};
-    println!("flaver : {:?}, oz : {:>}", print_flavor(remon_beverage.flavor), remon_beverage.fluid_oz);
+    remon_beverage.print_self();
     let orange_beverage = Beverage{flavor: Flavor::ORANGE, fluid_oz: 32.7};
-    println!("flaver : {:?}, oz : {:>}", print_flavor(orange_beverage.flavor), orange_beverage.fluid_oz);
+    orange_beverage.print_self();
 }
 
 fn print_flavor(f: Flavor) -> &'static str {
@@ -78,8 +89,12 @@ fn main() {
     just_match_integer();
     just_match_string();
 
+    // main function has a go variable ownership.
     let go = Direction::UP;
+    // which_way function take a go varialbe ownership. so, main function loose a go variable ownership.
     which_way(go);
+    // so, below code raise error.
+    // which_way(go); 
     which_way(Direction::DOWN);
     which_way(Direction::LEFT);
     which_way(Direction::RIGHT);
