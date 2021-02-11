@@ -4,14 +4,17 @@
 mod inaccessible;
 pub mod nested;
 
+#[allow(dead_code)]
 pub fn function() {
     println!("called `my::function()`");
 }
 
+#[allow(dead_code)]
 fn private_function() {
     println!("called `my::private_function()`");
 }
 
+#[allow(dead_code)]
 pub fn indirect_access() {
     print!("called `my::indirect_access()`, that\n> ");
 
