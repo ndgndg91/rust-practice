@@ -29,8 +29,7 @@ pub fn employee(){
     let door = Door{};
     let name = String::from("Name Dong Gil");
     let employee = Employee { name: name, role: Role::MANAGER };
-    let can_access = door.access(&employee.role);
+    println!("{:?} can access : {:?}", &employee.name, door.access(&employee.role));
     println!("{:?}", &employee.name);
     println!("{:?}", &employee.name);
-
 }
