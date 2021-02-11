@@ -66,6 +66,7 @@ pub fn just_match_string() {
     }
 }
 
+#[allow(dead_code)]
 pub enum Role {
     MANAGER,
     ADMIN,
