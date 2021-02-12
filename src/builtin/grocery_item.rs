@@ -1,7 +1,9 @@
+/// GroceryStore has Grocery Items.
 struct GroceryStore {
     grocery_items: Vec<GroceryItem>,
 }
 
+/// GroceryItem has name, stock, price.
 #[allow(dead_code)]
 struct GroceryItem {
     name: String,
@@ -9,6 +11,7 @@ struct GroceryItem {
     price: f64,
 }
 
+/// GroceryStore has Grocery Items.
 impl GroceryStore {
     fn find_stock_by_name(&self, name: &str) -> Option<i32> {
         for item in &self.grocery_items {
