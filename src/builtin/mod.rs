@@ -7,6 +7,7 @@ mod enum_with_match;
 mod match_practice;
 mod grocery_item;
 mod enum_practice;
+mod result_practice;
 
 pub fn practice() {
     repeat_practice::repeat_practice();
@@ -18,4 +19,5 @@ pub fn practice() {
     beverage::practice();
     grocery_item::practice();
     enum_practice::practice();
+    result_practice::practice();
 }
