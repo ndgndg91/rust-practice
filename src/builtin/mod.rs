@@ -6,6 +6,7 @@ mod tuple_practice;
 mod enum_with_match;
 mod match_practice;
 mod grocery_item;
+mod enum_practice;
 
 pub fn practice() {
     repeat_practice::repeat_practice();
@@ -16,4 +17,5 @@ pub fn practice() {
     employee::employee();
     beverage::practice();
     grocery_item::practice();
+    enum_practice::practice();
 }
