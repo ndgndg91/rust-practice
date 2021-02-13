@@ -12,6 +12,7 @@ mod hashmap_practice;
 mod closure_practice;
 mod map_combinatior_practice;
 mod option_combinator_practice;
+mod iter_practice;
 
 pub fn practice() {
     repeat_practice::repeat_practice();
@@ -28,4 +29,5 @@ pub fn practice() {
     closure_practice::practice();
     map_combinatior_practice::practice();
     option_combinator_practice::practice();
+    iter_practice::practice();
 }
