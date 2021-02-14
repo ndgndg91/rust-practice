@@ -3,6 +3,7 @@ mod builtin;
 mod my;
 mod user_input;
 
+
 #[allow(dead_code)]
 fn all_caps(word: &str) -> String {
     return word.to_uppercase();
@@ -17,6 +18,7 @@ fn main() {
     builtin::practice();
     my::indirect_access();
     my::function();
+    self_lib::print_hi_in_lib();
 }
 
 
