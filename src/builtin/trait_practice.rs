@@ -24,6 +24,12 @@ impl Perimeter for Triangle {
     }
  }
 
+ impl Default for Triangle {
+     fn default() -> Self {
+         Self {side_a: 3, side_b: 3, side_c: 3}
+     }
+ }
+
 fn print_perimeter(shape: &impl Perimeter) {
     let perimeter = shape.calculate_perimeter();
     println!("shape perimeter {:?}", perimeter);
@@ -38,4 +44,7 @@ pub fn practice(){
     };
     print_perimeter(&square);
     print_perimeter(&triangle);
+
+    let default = Triangle::default();
+    print_perimeter(&default);
 }
