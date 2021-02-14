@@ -15,6 +15,7 @@ mod option_combinator_practice;
 mod iter_practice;
 mod range_practice;
 mod trait_practice;
+mod const_practice;
 
 pub fn practice() {
     repeat_practice::repeat_practice();
@@ -34,4 +35,5 @@ pub fn practice() {
     iter_practice::practice();
     range_practice::practice();
     trait_practice::practice();
+    const_practice::practice();
 }
