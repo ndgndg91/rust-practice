@@ -10,3 +10,4 @@ name = "self_lib"
 path = "src/lib/demo.rs"
 
 [dependencies]
+thiserror = "1.0"
